@@ -7,8 +7,8 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
+            <x-input-label for="user_id" :value="__('UserID')" />
+            <x-text-input id="user_id" class="block mt-1 w-full" type="user_id" name="user_id" :value="old('user_id', $request->user_id)" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 

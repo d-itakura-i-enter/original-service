@@ -26,7 +26,7 @@ class PasswordResetLinkController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'email' => ['required', 'email'],
+            'user_id' => ['required', 'string', 'max:32'],
         ]);
 
         // We will send the password reset link to this user. Once we have attempted
