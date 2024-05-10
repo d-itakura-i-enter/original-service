@@ -1,17 +1,31 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
+@section('content')
+    @if (Auth::check())
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+         </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+        <div class="row">
+            <div class="col-sm-8">
+                {{-- 投稿フォーム --}}
+                @include('boards.form')
+                {{-- 投稿一覧 --}}
+                @include('boards.boards')
             </div>
         </div>
-    </div>
-</x-app-layout>
+    @else
+        <div class="center jumbotron">
+            <div class="navbar-brand d-flex flex-row-reverse bd-highlight">
+                Welcome to the Board
+            </div>
+        </div>
+    @endif
+@endsection

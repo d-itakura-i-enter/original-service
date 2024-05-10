@@ -5,10 +5,10 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- User ID -->
+        <!-- UserID -->
         <div>
             <x-input-label for="user_id" :value="__('UserID')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="text" name="user_id" :value="old('user_id')" required autofocus autocomplete="username" />
+            <x-text-input id="user_id" class="block mt-1 w-full" type="text" name="user_id" :value="old('user_id')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
