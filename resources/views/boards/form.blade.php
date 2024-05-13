@@ -1,16 +1,23 @@
-@if (Auth::id() == $user->id)
-    <div class="mt-4">
-        <p class="mb-0">投稿者名</p>
-        <p class="mb-0">{!! nl2br(e($user->user_name)) !!}</p>
-        <p class="mb-0">一言メッセージ</p>
-        <form method="POST" action="{{ route('boards.store') }}">
-            @csrf
-        
-            <div class="form-control mt-4">
-                <textarea rows="2" name="message" class="input input-bordered w-full"></textarea>
-            </div>
-        
-            <button type="submit" class="btn btn-primary btn-block normal-case">Post</button>
-        </form>
+<!--@if (Auth::id() == $user->id)-->
+<div class="w-full max-w-2/3 mx-auto mt-10">
+  <form method="POST" action="{{ route('boards.store') }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto">
+   @csrf
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+        投稿者名
+      </label>
+      <p class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="名前">{!! nl2br(e($user->user_name)) !!}</p>
     </div>
-@endif
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+        一言メッセージ
+      </label>
+      <textarea name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" type="text" placeholder="一言メッセージ"></textarea>
+    </div>
+    <div class="flex items-center justify-between">
+      <button type="submit" class="btn btn-primary normal-case">投稿</button>
+    </div>
+  </form>
+</div>
+<!--@endif-->
+

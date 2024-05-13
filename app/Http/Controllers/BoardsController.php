@@ -16,11 +16,11 @@ class BoardsController extends Controller
             try{
                 // 内部結合し、削除されていない投稿を投稿が古い順に取得
                 $boards = DB::table('board')
-                ->join('users', 'board.user_number', '=', 'users.id')
-                ->where('board.delete_flag', 0)
-                ->select('board.*', 'users.user_name')
-                ->orderBy('board.created_at', 'asc')
-                ->paginate(10);
+                    ->join('users', 'board.user_number', '=', 'users.id')
+                    ->where('board.delete_flag', 0)
+                    ->select('board.*', 'users.user_name')
+                    ->orderBy('board.created_at', 'asc')
+                    ->paginate(5);
                 $data = [
                     'user' => $user,
                     'boards' => $boards,

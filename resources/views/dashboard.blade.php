@@ -24,7 +24,11 @@
     @else
         <div class="center jumbotron">
             <div class="navbar-brand d-flex flex-row-reverse bd-highlight">
-                Welcome to the Board
+                一言掲示板へようこそ！
+                {{-- ユーザー登録ページへのリンク --}}
+                <div class="my-2"><a href="{{ route('register') }}" class="btn btn-primary normal-case">会員登録はこちら！</a></div>
+                {{-- ログインページへのリンク --}}
+                <div class="my-2"><a href="{{ route('login') }}" class="btn btn-accent normal-case">すでにアカウントをお持ちの方</a></div>
             </div>
         </div>
     @endif
