@@ -13,7 +13,7 @@
                             <td>{!!  $board->updated_at !!}</td>
                         </tr>
                         <tr>
-                            <td>{!! nl2br(e($board->message)) !!}</td>
+                            <td>{!! $board->message !!}</td>
                             <td>@include('board_favorite.favorite_button')</td>
                             <td>@if (Auth::id() == $board->user_number)
                                 {{-- 投稿削除ボタンのフォーム --}}
