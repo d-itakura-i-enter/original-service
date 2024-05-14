@@ -59,21 +59,6 @@ class BoardsController extends Controller
         // 前のURLへリダイレクトさせる
         return back();
     }
-    // public function update(Request $request, $id)
-    // {
-        
-    //     // idの値でメッセージを検索して取得
-    //     $board = Board::findOrFail($id);
-    //     if (\Auth::id() === $board->user_id) {
-    //         $board->delete_flag = 1;  // delete_flagを1に更新
-    //         $board->save();  // データベースに保存
-    //     }else{
-    //         return view('dashboard');
-    //     }
-    
-    //     // トップページへリダイレクトさせる
-    //     return redirect('/');
-    // }
     
     public function destroy(string $id)
     {

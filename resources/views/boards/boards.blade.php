@@ -9,8 +9,8 @@
                 <tbody>
                     <?php foreach ($boards as $board): ?>
                         <tr>
-                            <th>{!! nl2br(e($board->user_name)) !!}</th>
-                            <td>{!! nl2br(e($board->updated_at)) !!}</td>
+                            <th>{!!　$board->user_name !!}</th>
+                            <td>{!!  $board->updated_at !!}</td>
                         </tr>
                         <tr>
                             <td>{!! nl2br(e($board->message)) !!}</td>
