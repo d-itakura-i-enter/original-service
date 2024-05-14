@@ -9,11 +9,11 @@
                 <tbody>
                     <?php foreach ($boards as $board): ?>
                         <tr>
-                            <th>{!!　$board->user_name !!}</th>
-                            <td>{!!  $board->updated_at !!}</td>
+                            <th>{{　$board->user_name }}</th>
+                            <td>{{ $board->updated_at }}</td>
                         </tr>
                         <tr>
-                            <td>{!! $board->message !!}</td>
+                            <td>{{ $board->message }}</td>
                             <td>@include('board_favorite.favorite_button')</td>
                             <td>@if (Auth::id() == $board->user_number)
                                 {{-- 投稿削除ボタンのフォーム --}}
